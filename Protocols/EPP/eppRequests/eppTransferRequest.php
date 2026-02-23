@@ -184,6 +184,7 @@ class eppTransferRequest extends eppRequest {
         $transfer = $this->createElement('transfer');
         $transfer->setAttribute('op', self::OPERATION_REQUEST);
         $this->domainobject = $this->createElement('domain:transfer');
+        $this->domainobject->setAttribute('xmlns:domain',"urn:ietf:params:xml:ns:domain-1.0");
         $this->domainobject->appendChild($this->createElement('domain:name', $domain->getDomainname()));
         if ($domain->getPeriod()) {
             $domainperiod = $this->createElement('domain:period', $domain->getPeriod());
